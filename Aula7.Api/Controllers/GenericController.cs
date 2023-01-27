@@ -22,7 +22,7 @@ namespace Aula7.Api.Controllers
         
         
         [HttpPost()]
-        public IActionResult SaveUser(User user)
+        public ActionResult<User> SaveUser(User user)
         {
             //User variable has no Id set yet
             _userRepository.Add(user);
@@ -44,7 +44,7 @@ namespace Aula7.Api.Controllers
         }
 
         [HttpGet()]
-        public IActionResult GetUserById(int id)
+        public ActionResult<User> GetUserById(int id)
         {
             return Ok(_userRepository.GetById(id));
         }
